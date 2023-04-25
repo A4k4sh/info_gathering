@@ -1,3 +1,8 @@
+git clone https://github.com/A4k4sh/info_gathering.git
+cd info_gathering
+python3 info_gathering --help
+
+
 # info_gathering
 Information Gathring Tools
 
@@ -15,4 +20,4 @@ options:
                         Enter the IP for shodan search
   -o OUTPUT, --output OUTPUT
                         Enter the file to write output to.
-                        
+                       
