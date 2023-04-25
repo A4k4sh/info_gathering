@@ -1,5 +1,7 @@
 git clone https://github.com/A4k4sh/info_gathering.git
+
 cd info_gathering
+
 python3 info_gathering --help
 
 
