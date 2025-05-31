@@ -5,7 +5,7 @@ cd info_gathering
 python3 info_gathering --help
 
 
-# info_gathering
+# Info_gathering
 Information Gathring Tools
 
 
