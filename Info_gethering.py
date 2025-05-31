@@ -6,7 +6,6 @@ import requests
 import argparse
 
 print("""
-
 ██╗███╗░░██╗███████╗░█████╗░░██████╗░░█████╗░████████╗██╗░░██╗███████╗██████╗░██╗███╗░░██╗░██████╗░
 ██║████╗░██║██╔════╝██╔══██╗██╔════╝░██╔══██╗╚══██╔══╝██║░░██║██╔════╝██╔══██╗██║████╗░██║██╔════╝░
 ██║██╔██╗██║█████╗░░██║░░██║██║░░██╗░███████║░░░██║░░░███████║█████╗░░██████╔╝██║██╔██╗██║██║░░██╗░
@@ -14,17 +13,19 @@ print("""
 ██║██║░╚███║██║░░░░░╚█████╔╝╚██████╔╝██║░░██║░░░██║░░░██║░░██║███████╗██║░░██║██║██║░╚███║╚██████╔╝
 ╚═╝╚═╝░░╚══╝╚═╝░░░░░░╚════╝░░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░╚═════╝░
 """)
-argparse = argparse.ArgumentParser(description="This is a basic information gethering tool.", usage="python3 info_gethering.py -d Domain [-s IP]")
+argparse = argparse.ArgumentParser(description="This is a basic information gethering tool.", usage="python3 info_gethering.py -d Domain [-s IP] [-a api]")
 argparse.add_argument("-d", "--domain", help="Enter the domain name footprinting.")#,required=True
 argparse.add_argument("-s","--shodan",help="Enter the IP for shodan search")
+argparse.add_argument("-a","--api",help="Enter the api_key of shodan search")
 argparse.add_argument("-o","--output",help="Enter the file to write output to.")
 
 args = argparse.parse_args()
 domain = args.domain
 ip = args.shodan
+shodan_api = args.api
 output = args.output
 
-print("[+] Domain {} and IP {}".format(domain,ip))
+print("[+] Domain {} and IP {}".format(domain,ip,api))
 
 #whois Module
 print("[+] Getting whois info....")
@@ -83,7 +84,7 @@ shodan_result =''
 print("[+] Getting info from shodan for IP {}".format(ip))
 if ip:
     #shodan api
-    api = shodan.Shodan("uNglSaXod6xR4Ac7HatL8Yxoke5aR9Rs")
+    api = shodan.Shodan(shodan_api)
     try:
         results = api.search(ip)
         print("[+] Result found:{}".format(results['total']))
