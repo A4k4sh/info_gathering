@@ -9,8 +9,8 @@ python3 info_gathering --help
 Information Gathring Tools
 
 
-#python3 info_gethering.py --help
-usage: python3 info_gethering.py -d Domain [-s IP]
+#python3 Info_gethering.py --help
+usage: python3 Info_gethering.py -d Domain [-s IP]
 
 This is a basic information gethering tool.
 
