@@ -10,7 +10,7 @@ Information Gathring Tools
 
 
 #python3 Info_gethering.py --help
-usage: python3 Info_gethering.py -d Domain [-s IP]
+usage: python3 Info_gethering.py -d Domain [-s IP] [-a Shodan_api]
 
 This is a basic information gethering tool.
 
